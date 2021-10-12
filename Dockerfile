@@ -1,5 +1,5 @@
 # Docker 기반이 될 이미지(python 3.8-apline -> lightweight version)
-FROM python:3.8-alpine
+FROM python:3.7-alpine
 
 # 도커 컨테이너 안에서 python을 실행할 때 unbuffered mode를 추천
 # python이 실행될 때 도커이미지와 관련된 것들의 일부 충돌을 막아준다.
