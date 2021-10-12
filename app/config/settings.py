@@ -33,7 +33,8 @@ def get_secret(setting:str, secrets=secrets) -> str:
         err_message = 'secrets.json에 \'%s\' 변수를 설정하세요' % setting
         return ImproperlyConfigured(err_message)
 
-SECRET_KEY = get_secret('SECRET_KEY')
+# SECRET_KEY = get_secret('SECRET_KEY')
+SECRET_KEY = "&@u*u*arn(g1wmwydr^)gy@uh1@=(8=i!&7zv=ds45em=2)y1l"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
