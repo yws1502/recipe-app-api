@@ -21,17 +21,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-secret_file = os.path.join(BASE_DIR, 'secrets.json')
+# secret_file = os.path.join(BASE_DIR, 'secrets.json')
 
-with open(secret_file) as f:
-    secrets = json.loads(f.read())
+# with open(secret_file) as f:
+#     secrets = json.loads(f.read())
 
-def get_secret(setting:str, secrets=secrets) -> str:
-    try:
-        return secrets[setting]
-    except:
-        err_message = 'secrets.json에 \'%s\' 변수를 설정하세요' % setting
-        return ImproperlyConfigured(err_message)
+# def get_secret(setting:str, secrets=secrets) -> str:
+#     try:
+#         return secrets[setting]
+#     except:
+#         err_message = 'secrets.json에 \'%s\' 변수를 설정하세요' % setting
+#         return ImproperlyConfigured(err_message)
 
 # SECRET_KEY = get_secret('SECRET_KEY')
 SECRET_KEY = "&@u*u*arn(g1wmwydr^)gy@uh1@=(8=i!&7zv=ds45em=2)y1l"
