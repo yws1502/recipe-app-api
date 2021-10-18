@@ -3,12 +3,19 @@ FROM python:3.7-alpine
 
 # 도커 컨테이너 안에서 python을 실행할 때 unbuffered mode를 추천
 # python이 실행될 때 도커이미지와 관련된 것들의 일부 충돌을 막아준다.
-ENV PythonUNBUFFERED 1
+ENV PYTHONUNBUFFERED 1
 
 # dependanse install
 # 앞에있는 친구 = 복사할 파일 경로, 뒤에있는 친구 = docker 이미지 만들어질 파일명
 COPY ./requirements.txt /requirements.txt
+
+# postgre dependence들 설치 requirements 다운 받으면 지우기
+RUN apk add --update --no-cache postgresql-client
+RUN apk add --update --no-cache --virtual .tmp-build-deps \
+  gcc libc-dev linux-headers postgresql-dev
+
 RUN pip install -r /requirements.txt
+RUN apk del .tmp-build-deps
 
 RUN mkdir /app
 WORKDIR /app

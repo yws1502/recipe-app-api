@@ -3,3 +3,6 @@ djangorestframework>=3.9.0,<3.10.0
 
 # for travis
 flake8>=3.6.0,<3.7.0
+
+# Data Base
+psycopg2>=2.7.5,<2.8.0
